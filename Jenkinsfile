@@ -3,7 +3,7 @@ pipeline {
 
     stages {
        // stage('Checkout') { // This is the first stage in the pipeline and is named "Checkout."
-            steps {
+            //steps {
              //   // This step allows us to use the GitHub token securely for authentication during the checkout process.
               //  withCredentials([string(credentialsId: 'GitHub_Token', variable: 'github_token')]) {
                     // This step checks out the source code repository from GitHub using Git.
@@ -15,7 +15,7 @@ pipeline {
                   //  ])
               //  }
            // }
-        }
+       //}
 
         stage('Initialize Working Directory') { // This is the second stage, which initializes the Terraform working directory.
             steps {
