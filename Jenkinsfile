@@ -44,13 +44,6 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') { // This is the fourth stage, which applies the Terraform plan to create or modify resources.
-            steps {
-                script {
-                     This step runs the 'terraform apply' command with '--auto-approve' flag to automatically approve the plan and apply changes without manual confirmation.
-             //       sh 'terraform apply --auto-approve'
-                }
-            }
-        }
+
     }
 }
