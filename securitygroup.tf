@@ -77,9 +77,3 @@ resource "aws_security_group_rule" "lb_egress" {
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/0"]
 }
-
-
-resource "aws_db_subnet_group" "subnet_group" {
-  name       = "db-subnet-group"
-  subnet_ids = [aws_subnet.database_subnet_1.id, aws_subnet.database_subnet_2.id]
-}

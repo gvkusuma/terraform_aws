@@ -3,7 +3,9 @@
 variable "instance_type" {
   default = "t2.micro"
 }
-
+variable "AWS_REGION" {
+  default = "us-east-1"
+}
 data "aws_ami" "ubuntu" {
 
     most_recent = true
