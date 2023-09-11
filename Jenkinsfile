@@ -26,7 +26,16 @@ pipeline {
             }
         }
 
-        stage('Terraform Plan') { // This is the third stage, which performs a Terraform plan.
+        stage('Terraform destroy') { // This is the third stage, which performs a Terraform destroy.
+            steps {
+                script {
+                    // This step runs the 'terraform plan' command to generate an execution plan for Terraform.
+                    sh 'terraform destroy --auto-approve'
+                }
+            }
+        }
+
+           stage('Terraform Plan') { // This is the third stage, which performs a Terraform plan.
             steps {
                 script {
                     // This step runs the 'terraform plan' command to generate an execution plan for Terraform.
@@ -38,8 +47,8 @@ pipeline {
         stage('Terraform Apply') { // This is the fourth stage, which applies the Terraform plan to create or modify resources.
             steps {
                 script {
-                    // This step runs the 'terraform apply' command with '--auto-approve' flag to automatically approve the plan and apply changes without manual confirmation.
-                    sh 'terraform apply --auto-approve'
+                     This step runs the 'terraform apply' command with '--auto-approve' flag to automatically approve the plan and apply changes without manual confirmation.
+             //       sh 'terraform apply --auto-approve'
                 }
             }
         }
